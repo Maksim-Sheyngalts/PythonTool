@@ -1,1 +1,94 @@
+>>> import pandas as pd
 
+>>> data = {'Country': ['Belgium', 'India', 'Brazil'], 
+ 'Capital': ['Brussels', 'New Delhi', 'Brasília'],
+ 'Population': [11190846, 1303171035, 207847528]}
+>>> df = pd.DataFrame(data, 
+ columns=['Country', 'Capital', 'Population'])
+
+Read and Write to CSV
+>>> pd.read_csv( , header=None, nrows=5)
+>>> df.to_csv('myDataFrame.csv')
+
+Read and Write to Excel
+>>> pd.read_excel( )
+>>> df.to_excel('dir/myDataFrame.xlsx', sheet_name='Sheet1')
+ 
+Read multiple sheets from the same file
+>>> xlsx = pd.ExcelFile( )
+>>> df = pd.read_excel(xlsx, 'Sheet1')
+
+
+>>> s = pd.Series([3, -5, 7, 4], index=['a', 'b', 'c', 'd'])
+
+
+
+By Position
+>>> df.iloc[[0],[0]] Select single value by row &
+ 'Belgium' column
+>>> df.iat([0],[0])
+ 'Belgium'
+ By Label
+>>> df.loc[[0], ['Country']] Select single value by row &
+ 'Belgium' column labels
+>>> df.at([0], ['Country']) 'Belgium'
+ By Label/Position
+>>> df.ix[2] Select single row of Country Brazil subset of rows Capital Brasília Population 207847528
+>>> df.ix[:,'Capital'] Select a single column of 0 Brussels subset of columns 
+ 1 New Delhi
+ 2 Brasília >>> df.ix[1,'Capital'] Select rows and columns
+ 'New Delhi' 
+ Boolean Indexing
+>>> s[~(s > 1)] Series s where value is not >1
+>>> s[(s < -1) | (s > 2)] s where value is <-1 or >2
+>>> df[df['Population']>1200000000] Use filter to adjust DataFrame
+>>> s['a'] = 6 Set index a of Series
+
+
+Dropping
+>>> s.drop(['a', 'c']) Drop values from rows (axis=0)
+>>> df.drop('Country', axis=1) Drop values from columns(axis=1)
+Data Alignment
+ a 10.0
+ b -5.0
+ c 5.0
+ d 7.0
+>>> s3 = pd.Series([7, -2, 3], index=['a', 'c', 'd'])
+>>> s + s3
+ a 10.0
+ b NaN
+ c 5.0
+ d 7.0
+Arithmetic Operations with Fill Methods
+Internal Data Alignment
+NA values are introduced in the indices that don’t overlap:
+You can also do the internal data alignment yourself with 
+the help of the fill methods:
+Sort & Rank
+>>> df.sort_index() Sort by labels along an axis
+>>> df.sort_values(by='Country') Sort by the values along an axis
+>>> df.rank() Assign ranks to entries
+
+
+>>> df.shape (rows,columns) 
+>>> df.index Describe index
+>>> df.columns Describe DataFrame columns
+>>> df.info() Info on DataFrame
+>>> df.count() Number of non-NA values
+
+
+
+>>> s['b'] Get one element
+ -5
+>>> df[1:] Get subset of a DataFrame Country Capital Population
+ 1 India New Delhi 1303171035
+ 2 Brazil Brasília 207847528
+
+
+>>> from sqlalchemy import create_engine
+>>> engine = create_engine('sqlite:///:memory:')
+>>> pd.read_sql("SELECT * FROM my_table;", engine)
+>>> pd.read_sql_table('my_table', engine)
+>>> pd.read_sql_query("SELECT * FROM my_table;", engine)
+>>> df.to_sql('myDf', engine)
+read_sql()is a convenience wrapper around read_sql_table() and
