@@ -35,122 +35,160 @@ Asking For Help
 ---------------------------
 -- i am end here p
 --------------------------
+Also see NumPy Arrays
 
 Lists
 >>> a = 'is'
 >>> b = 'nice'
 >>> my_list = ['my', 'list', a, b]
 >>> my_list2 = [[4,5,6,7], [3,4,5,6]]
+ 
  Subset
->>> my_list[1]
->>> my_list[-3]
+>>> my_list[1] Select item at index 1
+
+>>> my_list[-3] Select 3rd last item
+ 
  Slice
->>> my_list[1:3]
->>> my_list[1:]
->>> my_list[:3]
->>> my_list[:]
+>>> my_list[1:3] Select items at index 1 and 2
+>>> my_list[1:] Select items after index 0
+>>> my_list[:3] Select items before index 3
+>>> my_list[:] Copy my_list
+ 
  Subset Lists of Lists
->>> my_list2[1][0]
+>>> my_list2[1][0] my_list[list][itemOfList]
 >>> my_list2[1][:2]
-Also see NumPy Arrays
->>> my_list.index(a)
->>> my_list.count(a)
->>> my_list.append('!')
->>> my_list.remove('!')
->>> del(my_list[0:1])
->>> my_list.reverse()
->>> my_list.extend('!')
->>> my_list.pop(-1)
->>> my_list.insert(0,'!')
->>> my_list.sort()
-Get the index of an item
-Count an item
-Append an item at a time
-Remove an item
-Remove an item
-Reverse the list
-Append an item
-Remove an item
-Insert an item
-Sort the list
+
+
+
+List Methods
+>>> my_list.index(a)     Get the index of an item
+>>> my_list.count(a)     Count an item
+>>> my_list.append('!')  Append an item at a time
+>>> my_list.remove('!')  Remove an item
+>>> del(my_list[0:1])    Remove an item
+>>> my_list.reverse()    Reverse the list
+
+>>> my_list.extend('!') Append an item
+>>> my_list.pop(-1) Remove an item
+>>> my_list.insert(0,'!') Insert an item
+>>> my_list.sort()Sort the list
+
+
+
+
+
+
+
+
+
+
+
 Index starts at 0
-Select item at index 1
-Select 3rd last item
-Select items at index 1 and 2
-Select items after index 0
-Select items before index 3
-Copy my_list
-my_list[list][itemOfList]
+
+
+
+
 Libraries
->>> my_string.upper()
->>> my_string.lower()
->>> my_string.count('w')
->>> my_string.replace('e', 'i')
->>> my_string.strip()
+>>> my_string.upper()String to uppercase
+
+
+
+
+>>> my_string.lower()String to lowercase
+>>> my_string.count('w')Count String elements
+>>> my_string.replace('e', 'i')Replace String elements
+>>> my_string.strip()Strip whitespaces
 >>> my_string = 'thisStringIsAwesome'
 >>> my_string
 'thisStringIsAwesome'
+
 Numpy Arrays
 >>> my_list = [1, 2, 3, 4]
 >>> my_array = np.array(my_list)
 >>> my_2darray = np.array([[1,2,3],[4,5,6]])
->>> my_array.shape
->>> np.append(other_array)
->>> np.insert(my_array, 1, 5)
->>> np.delete(my_array,[1])
->>> np.mean(my_array)
->>> np.median(my_array)
->>> my_array.corrcoef()
->>> np.std(my_array)
+
+
+
 Asking For Help
 >>> my_string[3]
 >>> my_string[4:9]
- Subset
->>> my_array[1]
+
+
+Selecting Numpy Array Elements 
+(Index starts at 0)
+ 
+Subset
+>>> my_array[1]       Select item at index 1
  2
- Slice
->>> my_array[0:2]
+
+Slice
+>>> my_array[0:2]     Select items at index 0 and 1
  array([1, 2])
- Subset 2D Numpy arrays
->>> my_2darray[:,0]
+ 
+Subset 2D Numpy arrays
+>>> my_2darray[:,0]   my_2darray[rows, columns
  array([1, 4])
+
+
 >>> my_list + my_list
 ['my', 'list', 'is', 'nice', 'my', 'list', 'is', 'nice']
+
 >>> my_list * 2
 ['my', 'list', 'is', 'nice', 'my', 'list', 'is', 'nice']
 >>> my_list2 > 4
 True
+
+Numpy Array Operations
 >>> my_array > 3
  array([False, False, False, True], dtype=bool)
+
 >>> my_array * 2
  array([2, 4, 6, 8])
+
 >>> my_array + np.array([5, 6, 7, 8])
  array([6, 8, 10, 12])
+
+
+
+
+Numpy Array Functions
+>>> my_array.shape             Get the dimensions of the array
+>>> np.append(other_array)     Append items to an array
+>>> np.insert(my_array, 1, 5)  Insert items in an array
+>>> np.delete(my_array,[1])    Delete items in an array
+>>> np.mean(my_array)          Mean of the array
+>>> np.median(my_array)        Median of the array
+>>> my_array.corrcoef()        Correlation coefficient
+>>> np.std(my_array)           Standard deviation
+
+
+
+
 >>> my_string * 2
  'thisStringIsAwesomethisStringIsAwesome'
+
 >>> my_string + 'Innit'
  'thisStringIsAwesomeInnit'
+
 >>> 'm' in my_string
  True DataCamp
+
 Learn Python for Data Science Interactively
 Scientific computing
 Data analysis
 2D plotting
+
 Machine learning
 Also see Lists
-Get the dimensions of the array
-Append items to an array
-Insert items in an array
-Delete items in an array
-Mean of the array
-Median of the array
-Correlation coefficient
-Standard deviation
-String to uppercase
-String to lowercase
-Count String elements
-Replace String elements
-Strip whitespaces
+
+
+
+
+
+
+
+
+
 Select item at index 1
 Select items at index 0 and 1
 my_2darray[rows, columns]
