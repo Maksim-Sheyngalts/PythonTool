@@ -1,3 +1,5 @@
+Python Basics
+
 Variables and Data Types
 
 Variable Assignment
@@ -24,10 +26,12 @@ Strings
  2.5
 
 Variables and Data Types
- str() '5', '3.45', 'True' Variables to strings
- int() 5, 3, 1 Variables to integers
- float() 5.0, 1.0 Variables to floats
- bool() True, True, True Variables to booleans
+
+Types and Type Conversion
+ str()    '5', '3.45', 'True' Variables to strings
+ int()     5, 3, 1            Variables to integers
+ float()   5.0, 1.0           Variables to floats
+ bool()    True, True, True   Variables to booleans
 
 Asking For Help
 >>> help(str)
@@ -35,30 +39,58 @@ Asking For Help
 ---------------------------
 -- i am end here p
 --------------------------
-Also see NumPy Arrays
 
-Lists
+Strings
+>>> my_string = 'thisStringIsAwesome'
+>>> my_string
+'thisStringIsAwesome'
+
+
+String Operations
+
+>>> my_string * 2
+ 'thisStringIsAwesomethisStringIsAwesome'
+
+>>> my_string + 'Innit'
+ 'thisStringIsAwesomeInnit'
+
+>>> 'm' in my_string
+ True
+
+
+Lists       (Also see NumPy Arrays)
 >>> a = 'is'
 >>> b = 'nice'
 >>> my_list = ['my', 'list', a, b]
 >>> my_list2 = [[4,5,6,7], [3,4,5,6]]
  
+ 
+Selecting List Elements 
  Subset
 >>> my_list[1] Select item at index 1
 
 >>> my_list[-3] Select 3rd last item
  
  Slice
->>> my_list[1:3] Select items at index 1 and 2
->>> my_list[1:] Select items after index 0
->>> my_list[:3] Select items before index 3
->>> my_list[:] Copy my_list
+>>> my_list[1:3]   Select items at index 1 and 2
+>>> my_list[1:]    Select items after index 0
+>>> my_list[:3]    Select items before index 3
+>>> my_list[:]     Copy my_list
  
  Subset Lists of Lists
->>> my_list2[1][0] my_list[list][itemOfList]
+>>> my_list2[1][0]       my_list[list][itemOfList]
 >>> my_list2[1][:2]
 
 
+List Operations
+
+>>> my_list + my_list
+['my', 'list', 'is', 'nice', 'my', 'list', 'is', 'nice']
+
+>>> my_list * 2
+['my', 'list', 'is', 'nice', 'my', 'list', 'is', 'nice']
+>>> my_list2 > 4
+True
 
 List Methods
 >>> my_list.index(a)     Get the index of an item
@@ -68,41 +100,35 @@ List Methods
 >>> del(my_list[0:1])    Remove an item
 >>> my_list.reverse()    Reverse the list
 
->>> my_list.extend('!') Append an item
->>> my_list.pop(-1) Remove an item
->>> my_list.insert(0,'!') Insert an item
->>> my_list.sort()Sort the list
+>>> my_list.extend('!')         Append an item
+>>> my_list.pop(-1)             Remove an item
+>>> my_list.insert(0,'!')       Insert an item
+>>> my_list.sort()              Sort the list
+
+String Operations       Index starts at 0
+>>> my_string[3]
+>>> my_string[4:9]
+
+String Methods
+
+>>> my_string.upper()              String to uppercase
+>>> my_string.lower()              String to lowercase
+>>> my_string.count('w')           Count String elements
+>>> my_string.replace('e', 'i')    Replace String elements
+>>> my_string.strip()              Strip whitespaces
 
 
 
 
 
+Import libraries
+>>> import numpy
+>>> import numpy as np
 
+Selective import
+>>> from math import pi
 
-
-
-
-
-Index starts at 0
-
-
-
-
-Libraries
->>> my_string.upper()String to uppercase
-
-
-
-
->>> my_string.lower()String to lowercase
->>> my_string.count('w')Count String elements
->>> my_string.replace('e', 'i')Replace String elements
->>> my_string.strip()Strip whitespaces
->>> my_string = 'thisStringIsAwesome'
->>> my_string
-'thisStringIsAwesome'
-
-Numpy Arrays
+Numpy Arrays (Also see Lists )
 >>> my_list = [1, 2, 3, 4]
 >>> my_array = np.array(my_list)
 >>> my_2darray = np.array([[1,2,3],[4,5,6]])
